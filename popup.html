@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+    <script> var newTab; // declare variable to store reference to the new tab
+
+let engine = "https://www.bing.com/search?q=";
+
+let string = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+
+var a = 0;
+
+function openTab() {
+  // Open a new tab with a specific URL
+
+  newTab = window.open(engine, '_blank');
+  
+  // Call the changeURL() function every 5 seconds
+  setInterval(changeURL, 4000);
+}
+
+function changeURL() {
+
+  var end = string.substring(0, a+1);
+
+  a++;
+
+  var randomURL = engine + end;
+  
+  // Update the URL of the new tab
+  newTab.location.href = randomURL;
+}
+</script>
+</head>
+<body>
+    <button onclick="openTab()">Start</button>
+  </body>
+</html>
